@@ -44,7 +44,7 @@ public class ProductCategory{
                 ", categoryName='" + categoryName + '\'' +
                 ", categoryType=" + categoryType +
                 ", createTime=" + createTime +
-                ", updateTime=" + changeTime +
+                ", changeTime=" + changeTime +
                 ", status=" + status +
                 '}';
     }

@@ -52,7 +52,7 @@ public class OrderDTO {
 
     /** 更新时间. */
     @JsonSerialize(using = Date2LongSerializer.class)
-    private Date updateTime;
+    private Date changeTime;
 
     List<OrderDetail> orderDetailList;
 

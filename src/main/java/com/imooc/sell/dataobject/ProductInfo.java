@@ -49,7 +49,7 @@ public class ProductInfo {
 
     private Date createTime;
 
-    private Date updateTime;
+    private Date changeTime;
 
     @JsonIgnore
     public ProductStatusEnum getProductStatusEnum() {

@@ -51,6 +51,6 @@ public class OrderMaster {
     private Date createTime;
 
     /** 更新时间. */
-    private Date updateTime;
+    private Date changeTime;
 
 }
