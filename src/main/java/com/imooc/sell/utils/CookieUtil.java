@@ -1,4 +1,4 @@
-package com.imooc.utils;
+package com.imooc.sell.utils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

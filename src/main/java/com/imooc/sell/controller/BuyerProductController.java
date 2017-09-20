@@ -1,4 +1,4 @@
-package com.imooc.sell;
+package com.imooc.sell.controller;
 
 import com.imooc.sell.VO.ResultVO;
 import com.imooc.sell.dataobject.ProductInfo;
@@ -22,6 +22,8 @@ public class BuyerProductController {
     @RequestMapping("list")
     public ResultVO list(){
         ResultVO resultVO = new ResultVO();
+        resultVO.setCode(0);
+        resultVO.setMsg("成功");
         return resultVO;
     }
 

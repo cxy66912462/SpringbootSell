@@ -1,6 +1,7 @@
-package com.imooc.utils;
+package com.imooc.sell.utils;
 
-import com.imooc.VO.ResultVO;
+
+import com.imooc.sell.VO.ResultVO;
 
 /**
  * Created by 廖师兄

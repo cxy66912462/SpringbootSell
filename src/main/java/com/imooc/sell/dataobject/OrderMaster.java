@@ -1,7 +1,7 @@
-package com.imooc.dataobject;
+package com.imooc.sell.dataobject;
 
-import com.imooc.enums.OrderStatusEnum;
-import com.imooc.enums.PayStatusEnum;
+import com.imooc.sell.enums.OrderStatusEnum;
+import com.imooc.sell.enums.PayStatusEnum;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -11,8 +11,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * Created by 廖师兄
- * 2017-06-11 17:08
+ * Created with IntelliJ IDEA.
+ * Description:
+ * User: chaoxingyu
+ * Date: 2017-09-20
+ * Time: 15:31
  */
 @Entity
 @Data

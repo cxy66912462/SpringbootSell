@@ -1,4 +1,4 @@
-package com.imooc.dataobject;
+package com.imooc.sell.dataobject;
 
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
@@ -8,8 +8,11 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 
 /**
- * Created by 廖师兄
- * 2017-06-11 17:20
+ * Created with IntelliJ IDEA.
+ * Description:
+ * User: chaoxingyu
+ * Date: 2017-09-20
+ * Time: 15:31
  */
 @Entity
 @Data

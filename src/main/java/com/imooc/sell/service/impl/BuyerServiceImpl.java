@@ -1,10 +1,10 @@
-package com.imooc.service.impl;
+package com.imooc.sell.service.impl;
 
-import com.imooc.dto.OrderDTO;
-import com.imooc.enums.ResultEnum;
-import com.imooc.exception.SellException;
-import com.imooc.service.BuyerService;
-import com.imooc.service.OrderService;
+import com.imooc.sell.dto.OrderDTO;
+import com.imooc.sell.enums.ResultEnum;
+import com.imooc.sell.exception.SellException;
+import com.imooc.sell.service.BuyerService;
+import com.imooc.sell.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +19,7 @@ public class BuyerServiceImpl implements BuyerService {
 
     @Autowired
     private OrderService orderService;
+
 
     @Override
     public OrderDTO findOrderOne(String openid, String orderId) {

@@ -1,6 +1,7 @@
-package com.imooc.service;
+package com.imooc.sell.service;
 
-import com.imooc.dto.OrderDTO;
+
+import com.imooc.sell.dto.OrderDTO;
 
 /**
  * 买家

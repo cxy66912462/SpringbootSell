@@ -1,6 +1,7 @@
-package com.imooc.utils;
+package com.imooc.sell.utils;
 
-import com.imooc.enums.CodeEnum;
+
+import com.imooc.sell.enums.CodeEnum;
 
 /**
  * Created by 廖师兄

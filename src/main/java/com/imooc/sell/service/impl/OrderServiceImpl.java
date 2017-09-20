@@ -1,19 +1,21 @@
-package com.imooc.service.impl;
+package com.imooc.sell.service.impl;
 
-import com.imooc.converter.OrderMaster2OrderDTOConverter;
-import com.imooc.dataobject.OrderDetail;
-import com.imooc.dataobject.OrderMaster;
-import com.imooc.dataobject.ProductInfo;
-import com.imooc.dto.CartDTO;
-import com.imooc.dto.OrderDTO;
-import com.imooc.enums.OrderStatusEnum;
-import com.imooc.enums.PayStatusEnum;
-import com.imooc.enums.ResultEnum;
-import com.imooc.exception.SellException;
-import com.imooc.repository.OrderDetailRepository;
-import com.imooc.repository.OrderMasterRepository;
-import com.imooc.service.*;
-import com.imooc.utils.KeyUtil;
+import com.imooc.sell.dataobject.OrderDetail;
+import com.imooc.sell.dataobject.OrderMaster;
+import com.imooc.sell.dataobject.ProductInfo;
+import com.imooc.sell.dto.CartDTO;
+import com.imooc.sell.dto.OrderDTO;
+import com.imooc.sell.enums.OrderStatusEnum;
+import com.imooc.sell.enums.PayStatusEnum;
+import com.imooc.sell.enums.ResultEnum;
+import com.imooc.sell.exception.SellException;
+import com.imooc.sell.repository.OrderDetailRepository;
+import com.imooc.sell.repository.OrderMasterRepository;
+import com.imooc.sell.service.OrderService;
+import com.imooc.sell.service.PayService;
+import com.imooc.sell.service.ProductService;
+import com.imooc.sell.service.PushMessageService;
+import com.imooc.sell.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,8 +54,8 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private PushMessageService pushMessageService;
 
-    @Autowired
-    private WebSocket webSocket;
+//    @Autowired
+//    private WebSocket webSocket;
 
     @Override
     @Transactional
@@ -96,14 +98,14 @@ public class OrderServiceImpl implements OrderService {
         orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());
         orderMasterRepository.save(orderMaster);
 
-        //4. 扣库存
-        List<CartDTO> cartDTOList = orderDTO.getOrderDetailList().stream().map(e ->
-                new CartDTO(e.getProductId(), e.getProductQuantity())
-        ).collect(Collectors.toList());
-        productService.decreaseStock(cartDTOList);
-
-        //发送websocket消息
-        webSocket.sendMessage(orderDTO.getOrderId());
+//        //4. 扣库存
+//        List<CartDTO> cartDTOList = orderDTO.getOrderDetailList().stream().map(e ->
+//                new CartDTO(e.getProductId(), e.getProductQuantity())
+//        ).collect(Collectors.toList());
+//        productService.decreaseStock(cartDTOList);
+//
+//        //发送websocket消息
+//        webSocket.sendMessage(orderDTO.getOrderId());
 
         return orderDTO;
     }
@@ -130,11 +132,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Page<OrderDTO> findList(String buyerOpenid, Pageable pageable) {
-        Page<OrderMaster> orderMasterPage = orderMasterRepository.findByBuyerOpenid(buyerOpenid, pageable);
-
-        List<OrderDTO> orderDTOList = OrderMaster2OrderDTOConverter.convert(orderMasterPage.getContent());
-
-        return new PageImpl<OrderDTO>(orderDTOList, pageable, orderMasterPage.getTotalElements());
+//        Page<OrderMaster> orderMasterPage = orderMasterRepository.findByBuyerOpenid(buyerOpenid, pageable);
+//
+//        List<OrderDTO> orderDTOList = OrderMaster2OrderDTOConverter.convert(orderMasterPage.getContent());
+//
+//        return new PageImpl<OrderDTO>(orderDTOList, pageable, orderMasterPage.getTotalElements());
+        return null;
     }
 
     @Override
@@ -162,15 +165,15 @@ public class OrderServiceImpl implements OrderService {
             log.error("【取消订单】订单中无商品详情, orderDTO={}", orderDTO);
             throw new SellException(ResultEnum.ORDER_DETAIL_EMPTY);
         }
-        List<CartDTO> cartDTOList = orderDTO.getOrderDetailList().stream()
-                .map(e -> new CartDTO(e.getProductId(), e.getProductQuantity()))
-                .collect(Collectors.toList());
-        productService.increaseStock(cartDTOList);
-
-        //如果已支付, 需要退款
-        if (orderDTO.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())) {
-            payService.refund(orderDTO);
-        }
+//        List<CartDTO> cartDTOList = orderDTO.getOrderDetailList().stream()
+//                .map(e -> new CartDTO(e.getProductId(), e.getProductQuantity()))
+//                .collect(Collectors.toList());
+//        productService.increaseStock(cartDTOList);
+//
+//        //如果已支付, 需要退款
+//        if (orderDTO.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())) {
+//            payService.refund(orderDTO);
+//        }
 
         return orderDTO;
     }
@@ -230,10 +233,11 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Page<OrderDTO> findList(Pageable pageable) {
-        Page<OrderMaster> orderMasterPage = orderMasterRepository.findAll(pageable);
-
-        List<OrderDTO> orderDTOList = OrderMaster2OrderDTOConverter.convert(orderMasterPage.getContent());
-
-        return new PageImpl<>(orderDTOList, pageable, orderMasterPage.getTotalElements());
+//        Page<OrderMaster> orderMasterPage = orderMasterRepository.findAll(pageable);
+//
+//        List<OrderDTO> orderDTOList = OrderMaster2OrderDTOConverter.convert(orderMasterPage.getContent());
+//
+//        return new PageImpl<>(orderDTOList, pageable, orderMasterPage.getTotalElements());
+        return null;
     }
 }

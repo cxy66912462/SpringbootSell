@@ -1,6 +1,7 @@
 package com.imooc.service.impl;
 
-import com.imooc.dataobject.ProductCategory;
+import com.imooc.sell.dataobject.ProductCategory;
+import com.imooc.sell.service.impl.CategoryServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,7 +43,9 @@ public class CategoryServiceImplTest {
 
     @Test
     public void save() throws Exception {
-        ProductCategory productCategory = new ProductCategory("男生专享", 10);
+        ProductCategory productCategory = new ProductCategory();
+        productCategory.setCategoryName("男生专享");
+        productCategory.setCategoryType(10);
         ProductCategory result = categoryService.save(productCategory);
         Assert.assertNotNull(result);
     }

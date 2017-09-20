@@ -1,4 +1,4 @@
-package com.imooc.exception;
+package com.imooc.sell.exception;
 
 /**
  * Created by 廖师兄

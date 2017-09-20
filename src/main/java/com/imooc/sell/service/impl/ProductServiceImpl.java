@@ -1,12 +1,12 @@
-package com.imooc.service.impl;
+package com.imooc.sell.service.impl;
 
-import com.imooc.dataobject.ProductInfo;
-import com.imooc.dto.CartDTO;
-import com.imooc.enums.ProductStatusEnum;
-import com.imooc.enums.ResultEnum;
-import com.imooc.exception.SellException;
-import com.imooc.repository.ProductInfoRepository;
-import com.imooc.service.ProductService;
+import com.imooc.sell.dataobject.ProductInfo;
+import com.imooc.sell.dto.CartDTO;
+import com.imooc.sell.enums.ProductStatusEnum;
+import com.imooc.sell.enums.ResultEnum;
+import com.imooc.sell.exception.SellException;
+import com.imooc.sell.repository.ProductInfoRepository;
+import com.imooc.sell.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

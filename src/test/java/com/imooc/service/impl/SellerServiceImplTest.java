@@ -1,6 +1,5 @@
 package com.imooc.service.impl;
 
-import com.imooc.dataobject.SellerInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
@@ -18,15 +17,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @Slf4j
 public class SellerServiceImplTest {
 
-    private static final String openid = "abc";
-
-    @Autowired
-    private SellerServiceImpl sellerService;
-
-    @Test
-    public void findSellerInfoByOpenid() throws Exception {
-        SellerInfo result = sellerService.findSellerInfoByOpenid(openid);
-        Assert.assertEquals(openid, result.getOpenid());
-    }
+//    private static final String openid = "abc";
+//
+//    @Autowired
+//    private SellerServiceImpl sellerService;
+//
+//    @Test
+//    public void findSellerInfoByOpenid() throws Exception {
+//        SellerInfo result = sellerService.findSellerInfoByOpenid(openid);
+//        Assert.assertEquals(openid, result.getOpenid());
+//    }
 
 }

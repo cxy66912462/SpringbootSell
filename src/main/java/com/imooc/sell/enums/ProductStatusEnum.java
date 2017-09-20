@@ -1,4 +1,4 @@
-package com.imooc.enums;
+package com.imooc.sell.enums;
 
 import lombok.Getter;
 

@@ -1,4 +1,4 @@
-package com.imooc.VO;
+package com.imooc.sell.VO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

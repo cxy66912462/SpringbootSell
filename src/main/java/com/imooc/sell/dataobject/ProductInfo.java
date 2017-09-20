@@ -1,8 +1,8 @@
-package com.imooc.dataobject;
+package com.imooc.sell.dataobject;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.imooc.enums.ProductStatusEnum;
-import com.imooc.utils.EnumUtil;
+import com.imooc.sell.enums.ProductStatusEnum;
+import com.imooc.sell.utils.EnumUtil;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -12,9 +12,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 商品
- * Created by 廖师兄
- * 2017-05-09 11:30
+ * Created with IntelliJ IDEA.
+ * Description:
+ * User: chaoxingyu
+ * Date: 2017-09-20
+ * Time: 15:31
  */
 @Entity
 @Data
@@ -51,6 +53,8 @@ public class ProductInfo {
 
     @JsonIgnore
     public ProductStatusEnum getProductStatusEnum() {
+        EnumUtil.getByCode(productStatus,ProductStatusEnum.class);
+        EnumUtil.getByCode(productStatus,ProductStatusEnum.class);
         return EnumUtil.getByCode(productStatus, ProductStatusEnum.class);
     }
 }

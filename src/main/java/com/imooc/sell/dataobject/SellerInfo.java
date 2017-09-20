@@ -1,4 +1,4 @@
-package com.imooc.dataobject;
+package com.imooc.sell.dataobject;
 
 import lombok.Data;
 
@@ -6,8 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by 廖师兄
- * 2017-07-23 23:02
+ * Created with IntelliJ IDEA.
+ * Description:
+ * User: chaoxingyu
+ * Date: 2017-09-20
+ * Time: 15:31
  */
 @Data
 @Entity

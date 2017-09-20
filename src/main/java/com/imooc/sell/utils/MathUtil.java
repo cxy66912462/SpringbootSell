@@ -1,4 +1,4 @@
-package com.imooc.utils;
+package com.imooc.sell.utils;
 
 /**
  * Created by 廖师兄

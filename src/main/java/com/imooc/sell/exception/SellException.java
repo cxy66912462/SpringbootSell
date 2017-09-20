@@ -1,6 +1,7 @@
-package com.imooc.exception;
+package com.imooc.sell.exception;
 
-import com.imooc.enums.ResultEnum;
+
+import com.imooc.sell.enums.ResultEnum;
 
 /**
  * Created by 廖师兄

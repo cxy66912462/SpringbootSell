@@ -1,4 +1,4 @@
-package com.imooc.VO;
+package com.imooc.sell.VO;
 
 import lombok.Data;
 
